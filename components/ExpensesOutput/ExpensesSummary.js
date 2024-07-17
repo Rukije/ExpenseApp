@@ -1,7 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
-import { GlobalStyles } from "../../constants/styles";
 
-function ExpensesSummary({ expenses = [], periodName }) {
+import { View, Text, StyleSheet } from 'react-native';
+
+import { GlobalStyles } from '../../constants/styles';
+
+function ExpensesSummary({ expenses, periodName }) {
   const expensesSum = expenses.reduce((sum, expense) => {
     return sum + expense.amount;
   }, 0);
@@ -21,9 +23,9 @@ const styles = StyleSheet.create({
     padding: 8,
     backgroundColor: GlobalStyles.colors.primary50,
     borderRadius: 6,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   period: {
     fontSize: 12,
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
   },
   sum: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: GlobalStyles.colors.primary500,
   },
 });
